@@ -11,7 +11,9 @@ public class Pedido {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@Column(nullable = false)
 	private String descricao;
+	
 	private Double valor;
 	
 	@Enumerated(EnumType.STRING)

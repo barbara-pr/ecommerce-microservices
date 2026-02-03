@@ -13,12 +13,15 @@ public class Pedido {
 	
 	private String descricao;
 	private Double valor;
-	private String status;
+	
+	@Enumerated(EnumType.STRING)
+	private PedidoStatus status;
+	
 	private LocalDateTime dataCriacao;
 	
 	public Pedido() {}
 	
-	public Pedido(String descricao, Double valor, String status, LocalDateTime dataCriacao) {
+	public Pedido(String descricao, Double valor, PedidoStatus status, LocalDateTime dataCriacao) {
 		this.descricao = descricao;
 		this.valor= valor;
 		this.status = status;
@@ -49,11 +52,11 @@ public class Pedido {
 		this.valor = valor;
 	}
 
-	public String getStatus() {
+	public PedidoStatus getStatus() {
 		return status;
 	}
 
-	public void setStatus(String status) {
+	public void setStatus(PedidoStatus status) {
 		this.status = status;
 	}
 
